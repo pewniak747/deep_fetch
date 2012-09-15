@@ -9,6 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Tomasz Pewiński"]
   gem.email         = ["pewniak747@gmail.com"]
   gem.description   = %q{easily fetch values from nested ruby hashes}
+  gem.summary   = %q{easily fetch values from nested ruby hashes}
   gem.homepage      = "https://github.com/pewniak747/deep_fetch"
 
   gem.files         = `git ls-files`.split($/)
