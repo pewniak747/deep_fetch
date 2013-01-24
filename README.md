@@ -1,5 +1,7 @@
 # DeepFetch
 
+[![Build Status](https://secure.travis-ci.org/pewniak747/deep_fetch.png?branch=master)](http://travis-ci.org/pewniak747/deep_fetch)
+
 Easily fetch values from nested ruby hashes.
 
 ## Installation
