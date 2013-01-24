@@ -53,5 +53,11 @@ describe Hash do
       bomb = ->() { raise "BOOM" }
       {:foo => {:bar => :baz}}.deep_fetch(:foo, :bar, &bomb).must_equal :baz
     end
+
+    it "must raise ArgumentError if invoked without arguments" do
+      lambda do
+        {}.deep_fetch
+      end.must_raise(ArgumentError)
+    end
   end
 end
