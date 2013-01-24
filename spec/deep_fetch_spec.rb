@@ -45,6 +45,10 @@ describe Hash do
       {:foo => {:bar => [:baz]}}.deep_fetch(:foo, :bar).must_equal [:baz]
     end
 
+    it "must_equal fetch hash from deeper hash" do
+      {:foo => {:bar => {:baz => :boo}}}.deep_fetch(:foo, :bar).must_equal({:baz => :boo})
+    end
+
     it "must_equal not evaluate a default block when fetching from deep hash" do
       bomb = ->() { raise "BOOM" }
       {:foo => {:bar => :baz}}.deep_fetch(:foo, :bar, &bomb).must_equal :baz
