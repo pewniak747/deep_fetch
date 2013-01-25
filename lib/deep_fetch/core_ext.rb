@@ -8,7 +8,10 @@ class Hash
     elsif value.kind_of?(Array) && args.size > 0
       value = value[args.shift]
       value.deep_fetch(*args, &block)
-    else value
+    elsif args.size > 0
+      {}.fetch(args.shift, &block)
+    else
+      value
     end
   end
 end

@@ -59,5 +59,11 @@ describe Hash do
         {}.deep_fetch
       end.must_raise(ArgumentError)
     end
+
+    it "must raise KeyError when deep key does not exist" do
+      lambda do
+        {:foo => :bar}.deep_fetch(:foo, :foo)
+      end.must_raise(KeyError)
+    end
   end
 end
