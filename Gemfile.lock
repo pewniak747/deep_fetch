@@ -14,6 +14,7 @@ GEM
       simplecov (>= 0.7)
       thor
     mime-types (1.23)
+    minitest (4.7.0)
     multi_json (1.7.2)
     rake (10.0.4)
     rest-client (1.6.7)
@@ -30,4 +31,5 @@ PLATFORMS
 DEPENDENCIES
   coveralls
   deep_fetch!
+  minitest
   rake
