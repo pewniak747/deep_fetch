@@ -71,7 +71,7 @@ describe Hash do
     end
 
     it "must not evaluate a default block when fetching from deep hash" do
-      bomb = ->() { raise "BOOM" }
+      bomb = lambda { raise "BOOM" }
       {:foo => {:bar => :baz}}.deep_fetch(:foo, :bar, &bomb).must_equal :baz
     end
   end
