@@ -1,6 +1,9 @@
 # DeepFetch
 
 [![Build Status](https://secure.travis-ci.org/pewniak747/deep_fetch.png?branch=master)](http://travis-ci.org/pewniak747/deep_fetch)
+[![Coverage Status](https://coveralls.io/repos/pewniak747/deep_fetch/badge.png?branch=master)](https://coveralls.io/r/pewniak747/deep_fetch)
+[![Dependency Status](https://gemnasium.com/pewniak747/deep_fetch.png)](https://gemnasium.com/pewniak747/deep_fetch)
+[![Gem Version](https://badge.fury.io/rb/deep_fetch.png)](http://badge.fury.io/rb/deep_fetch)
 
 Easily fetch values from nested ruby hashes.
 

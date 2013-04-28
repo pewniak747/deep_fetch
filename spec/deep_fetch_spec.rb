@@ -2,6 +2,9 @@ require 'minitest/spec'
 require 'minitest/autorun'
 
 require_relative '../lib/deep_fetch'
+require 'coveralls'
+
+Coveralls.wear!
 
 describe Hash do
   describe "deep_fetch" do
