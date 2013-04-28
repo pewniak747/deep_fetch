@@ -15,6 +15,7 @@ GEM
       thor
     mime-types (1.23)
     multi_json (1.7.2)
+    rake (10.0.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     simplecov (0.7.1)
@@ -29,3 +30,4 @@ PLATFORMS
 DEPENDENCIES
   coveralls
   deep_fetch!
+  rake
