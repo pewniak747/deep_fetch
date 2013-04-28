@@ -1,7 +1,7 @@
 require 'minitest/spec'
 require 'minitest/autorun'
 
-require_relative '../lib/deep_fetch'
+require File.expand_path('../../lib/deep_fetch', __FILE__)
 require 'coveralls'
 
 Coveralls.wear!
