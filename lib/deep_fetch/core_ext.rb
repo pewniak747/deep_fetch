@@ -7,7 +7,11 @@ class Hash
       value.deep_fetch(*args, &block)
     elsif value.kind_of?(Array) && args.size > 0
       value = value[args.shift]
-      value.deep_fetch(*args, &block)
+      if args.size > 0
+        value.deep_fetch(*args, &block)
+      else
+        value
+      end
     elsif args.size > 0
       {}.fetch(args.shift, &block)
     else
