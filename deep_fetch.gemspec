@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{easily fetch values from nested ruby hashes}
   gem.summary   = %q{easily fetch values from nested ruby hashes}
   gem.homepage      = "https://github.com/pewniak747/deep_fetch"
+  gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
