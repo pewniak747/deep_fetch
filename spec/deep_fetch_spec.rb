@@ -44,6 +44,10 @@ describe Hash do
       it "from nested array" do
         {:foo => {:bar => [:baz]}}.deep_fetch(:foo, :bar, 0).must_equal(:baz)
       end
+
+      it "of hash from deeper hash from nested array" do
+        {:foo => {:bar => [{:baz => :boo}]}}.deep_fetch(:foo, :bar, 0).must_equal({:baz => :boo})
+      end
     end
 
     describe "must rise KeyError" do
