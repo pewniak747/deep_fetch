@@ -1,4 +1,4 @@
-# DeepFetch
+# deep_fetch
 
 [![Build Status](https://secure.travis-ci.org/pewniak747/deep_fetch.png?branch=master)](http://travis-ci.org/pewniak747/deep_fetch)
 [![Coverage Status](https://coveralls.io/repos/pewniak747/deep_fetch/badge.png?branch=master)](https://coveralls.io/r/pewniak747/deep_fetch)
@@ -9,25 +9,60 @@ Easily fetch values from nested ruby hashes.
 
 ## Installation
 
-    $ gem install deep_fetch
+Add this line to your application's Gemfile:
 
-## Usage
+```
+gem 'deep_fetch'
+```
+
+And then execute:
+
+```
+bundle
+```
+
+## How?
+
+Let's say we have a big hash:
 
 ``` ruby
-require 'deep_fetch'
-
-big_hash = {
+example = {
   :foo => {
     :bar => [ 'a', 'b', 'c' ],
     :baz => :boo
   }
 }
-
-big_hash.deep_fetch(:foo, :baz) # :boo
-big_hash.deep_fetch(:foo, :boo) # raises KeyError
-big_hash.deep_fetch(:foo, :boo) { "not found" } # "not found"
-big_hash.deep_fetch(:foo, :bar, 1) # also fetch nested array
 ```
+
+We can fetch a value under :foo, :baz easily:
+
+``` ruby
+example.deep_fetch(:foo, :baz) # => :boo
+```
+
+If the key does not exist, we receive KeyError exception, just like using `Hash#fetch`
+
+``` ruby
+example.deep_fetch(:foo, :boo) # => KeyError: key not found: :boo
+```
+
+Specify a default value to be returned if key is missing in a block:
+
+``` ruby
+example.deep_fetch(:foo, :boo) { "not found" } # => "not found"
+```
+
+Lastly, if the hash contains nested array, we can get values from it by providing an integer:
+
+``` ruby
+example.deep_fetch(:foo, :bar, 1) # => 'b'
+```
+
+## Why?
+
+The gem might be useful when working with deeply nested hashes, e.g. API responses.
+
+By using `Hash#deep_fetch` we can assert that the response contains the key, making it fail loud otherwise.
 
 ## Contributing
 
