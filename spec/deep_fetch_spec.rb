@@ -45,6 +45,10 @@ describe Hash do
         {:foo => {:bar => [:baz]}}.deep_fetch(:foo, :bar, 0).must_equal(:baz)
       end
 
+      it "from array in array" do
+        {:foo => [:bar, [:baz]]}.deep_fetch(:foo, 1, 0).must_equal(:baz)
+      end
+
       it "of hash from deeper hash from nested array" do
         {:foo => {:bar => [{:baz => :boo}]}}.deep_fetch(:foo, :bar, 0).must_equal({:baz => :boo})
       end
