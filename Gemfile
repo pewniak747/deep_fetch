@@ -3,5 +3,5 @@ source 'https://rubygems.org'
 gemspec
 
 platforms :mri do
-  gem 'coveralls'
+  gem 'coveralls', require: false
 end
