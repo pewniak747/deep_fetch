@@ -2,9 +2,12 @@ require 'minitest/spec'
 require 'minitest/autorun'
 
 require File.expand_path('../../lib/deep_fetch', __FILE__)
-require 'coveralls'
 
-Coveralls.wear!
+begin
+  require 'coveralls'
+  Coveralls.wear!
+rescue LoadError
+end
 
 describe Hash do
   describe "deep_fetch" do
