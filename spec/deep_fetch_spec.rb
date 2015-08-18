@@ -25,11 +25,15 @@ describe Hash do
       end
 
       it "from block if key not found in deep hash" do
-        {:foo => {:bar => :baz}}.deep_fetch(:foo, :baz) { :boo } .must_equal :boo
+        {:foo => {:bar => :baz}}.deep_fetch(:foo, :baz) { :boo }.must_equal :boo
       end
 
       it "from arrays in deep hash" do
         {:foo => [nil, {:bar => :baz}]}.deep_fetch(:foo, 1, :bar).must_equal :baz
+      end
+
+      it "from array in array" do
+        {:foo => [:bar, [:baz]]}.deep_fetch(:foo, 1, 0).must_equal(:baz)
       end
 
       it "of hash from deep hash" do
@@ -38,6 +42,10 @@ describe Hash do
 
       it "of array from deep hash" do
         {:foo => {:bar => [:baz]}}.deep_fetch(:foo, :bar).must_equal [:baz]
+      end
+
+      it "of array from block from deep hash if key not found" do
+        {:foo => {:bar => [:baz]}}.deep_fetch(:boo, :baz) { [] }.must_equal []
       end
 
       it "of hash from deeper hash" do
