@@ -10,7 +10,7 @@ class Hash
       if value.kind_of?(Hash)
         value = value.fetch(arg, &block)
       elsif value.kind_of?(Array)
-        value = value[arg]
+        value = value[arg] if arg.kind_of?(Integer)
       else
         {}.fetch(arg, &block)
       end
