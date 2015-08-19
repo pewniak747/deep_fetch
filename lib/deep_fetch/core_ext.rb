@@ -12,7 +12,7 @@ class Hash
       elsif value.kind_of?(Array)
         value = value[arg]
       else
-        {}.fetch(arg, &block)
+        value = {}.fetch(arg, &block)
       end
     end
 
